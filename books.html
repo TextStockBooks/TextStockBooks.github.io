@@ -4,14 +4,77 @@
     <link rel="stylesheet" href="styles.css">
 
     <script src="sidenav.js"></script>
+    <script>function myFunction(ind) {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("text-input1");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+      
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[ind];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }</script>
 
+<script>function myFunction2(ind) {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("text-input2");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+  
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[ind];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }</script>
+  <script>function myFunction3(ind) {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("text-input3");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+  
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[ind];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }</script>
 </head>
 <img src="searchButton.png" style="position: fixed;left: 58vw;top: 6vw; z-index: 5; width: 3vw;height: 3vw;"onclick="window.location.href='lookup.html'">
 <img src="MenuButton.png"onclick="openNav()" style="position: fixed;left:1vw;top: 6vw;z-index: 16;width: 3vw;height: 3vw;">
 <img src="CartButton.png" style = "position: fixed;left: 90vw;top: 6vw;z-index: 16;width: 3vw;height: 3vw;" onclick="window.location.href='cart.html'">
 
 <body>
-<div class = "bookbox"style = "position: absolute; left: 8%; top: 10vw; width: 75%; height: 14vw;     background-color: rgba(148, 210, 140, 0.993);"><h2></h2><button>add to cart</button></div>
+<!-- <div class = "bookbox"style = "position: absolute; left: 8%; top: 10vw; width: 75%; height: 14vw;     background-color: rgba(148, 210, 140, 0.993);"><h2></h2><button>add to cart</button></div>
 <img src="textbook1.jpg" style = "position: absolute; left: 10%; top: 12vw; width: 10vw; height: 10vw;">
 <div class = "bookbox" style = "position: absolute; left: 8%; top: 30vw; width: 75%; height: 14vw;     background-color: rgba(148, 210, 140, 0.993);"></div>
 <img src="textbook1.jpg" style = "position: absolute; left: 10%; top: 32vw; width: 10vw; height: 10vw;">
@@ -26,7 +89,8 @@
 <img src="textbook1.jpg" style = "position: absolute; left: 10%; top: 92vw; width: 10vw; height: 10vw;">
 <div class = "bookbox" style = "position: absolute; left: 8%; top: 110vw; width: 75%; height: 14vw;     background-color: rgba(148, 210, 140, 0.993);"></div>
 
-<img src="textbook1.jpg" style = "position: absolute; left: 10%; top: 112vw; width: 10vw; height: 10vw;">
+<img src="textbook1.jpg" style = "position: absolute; left: 10%; top: 112vw; width: 10vw; height: 10vw;"> -->
+<input type="text" >
 
 </body>
 <div class="topBar1" ><h1 style="position: fixed;left: 5vw;top: -3vw; z-index: 10;"onclick="window.location.href='index.html'"><p style="position: absolute;left: 0px;top: 0px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: rgb(2, 88, 14);" >Text</p><p style="position: absolute;left: 4.5vw;top: -0.3vw;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 2.5vw; color: green;">Stock</p></h1></div>
@@ -36,9 +100,12 @@
 </div>
 
     <h1 style="position: fixed;left: 10vw;top: 5vw; text-align: right;font-size: 2vw">school name</h1>  
-    <textarea type="text" id="text-input" name="text-input" style="width: 10vw; height: 2vw; position: fixed; left: 21vw; top: 6.5vw;" ></textarea>
+    <input type="text" id="text-input1" name="text-input" style="width: 10vw; height: 2vw; position: fixed; left: 21vw; top: 6.5vw;" id="myInput" onkeyup="myFunction(3)" placeholder="Search for school.."></input>
     <h1 style="position: fixed;left: 40vw;top: 5vw; text-align: right;font-size: 2vw">class</h1>  
-    <textarea type="text" id="text-input" name="text-input" style="width: 10vw; height: 2vw; position: fixed; left: 45vw; top: 6.5vw;" onsubmit="window.location.href='books.html'" ></textarea>
+    <input type="text" id="text-input2" name="text-input" style="width: 10vw; height: 2vw; position: fixed; left: 45vw; top: 6.5vw;" onsubmit="window.location.href='books.html'" onkeyup="myFunction2(2)" placeholder="Search for Class.."></input>
+    <h1 style="position: fixed;left: 65vw;top: 5vw; text-align: right;font-size: 2vw">ISBN</h1>  
+    <input type="text" id="text-input3" name="text-input" style="width: 10vw; height: 2vw; position: fixed; left: 71vw; top: 6.5vw;" onsubmit="window.location.href='books.html'" onkeyup="myFunction3(1)" placeholder="Search for ISBN.."></input>
+
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -55,4 +122,38 @@
         ...
       </div>
 <div class="corner"></div>
+
+<table id="myTable">
+    <tr class="header">
+      <th style="width:30%;">Image</th>
+      <th style="width:30%;">ISBN</th>
+      <th style="width: 20%;">Class</th>
+      <th style="width: 20%;">School</th>
+    </tr>
+    <tr>
+      <td><img src="textbook1.jpg"></td>
+      <td>123456</td>
+      <td>cs119</td>
+      <td>Thomas</td>
+
+    </tr>
+    <tr>
+      <td><img src="textbook1.jpg"></td>
+      <td>1234567</td>
+      <td>eh229</td>
+      <td>Husson</td>
+    </tr>
+    <tr>
+      <td><img src="textbook1.jpg"></td>
+      <td>263749</td>
+      <td>ps420</td>
+      <td>Colby</td>
+    </tr>
+    <tr>
+      <td><img src="textbook1.jpg"></td>
+      <td>7263483</td>
+      <td>fn111</td>
+      <td>Thomas</td>
+    </tr>
+  </table>
 </html>
